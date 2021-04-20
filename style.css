@@ -62,3 +62,32 @@ html{
     color: red;
 }
 
+.buttons{
+    display:flex;
+    justify-content: center;
+}
+
+.btn{
+    padding: 5px 10px;
+    margin: 0px 10px;
+    border-radius: 5px;
+}
+
+.new-game{
+    background-color: #4253af;
+    color:#fff;
+}
+
+.atack{
+    background-color: #e51c23;
+    color: #fff;
+}
+
+.special-atack{
+    background-color: #ff9800;
+    color: #000;
+}
+
+.heal{
+    background-color: #259b24;
+}
