@@ -19,8 +19,9 @@ new Vue({
             this.logs = []
         },
         attack(special){
-            this.hurt('monsterLife', 5, 10, special,'Jogador', 'Monstro', 'playerLife')
-            this.hurt('playerLife', 7, 12, false, 'Monstro', 'Jogador', 'monsterLife')
+            this.hurt('monsterLife', 5, 10, special,'Jogador', 'Monstro', 'player')
+            if(this.monsterLife > 0)
+               this.hurt('playerLife', 7, 12, false, 'Monstro', 'Jogador', 'monster')
         },
         hurt(prop, min, max, special, source, target, cls){
             const plus = special ? 5 : 0
@@ -34,7 +35,8 @@ new Vue({
         },
         heal(min, max){
                const heal = this.getRandom(min,max)
-               this.playerLife = Math.min(this.playerLife + heal, 100) 
+               this.playerLife = Math.min(this.playerLife + heal, 100)
+               this.registerLog(`Jogador ganhou força de ${heal}`, 'player') 
         },
         giveUp(){
             this.running = false
